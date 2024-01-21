@@ -70,13 +70,14 @@ export default class HttpUtils {
         }).then(response => {
             if (response.ok == false)
                 throw new Error("Error!");
-            else return response.json();
+            else {
+                return response.json();
+            };
         })
             .then(data => { return data })
             .catch(error => {
                 throw new Error(error.message);
             });
-
 
         return response as T;
     }

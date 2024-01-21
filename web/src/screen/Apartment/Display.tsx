@@ -97,7 +97,7 @@ export default function ApartmentDisplay() {
             await connection
                 .start()
                 .then(() => {
-                    connection.on("GetLastIndex_ByApartmentCode_Response", (message: Array<RealTimeIndex>) => {
+                    connection.on("GetLastIndex_ByApartmentCode_Response" + code, (message: Array<RealTimeIndex>) => {
                         getListRealTimeIndex(message);
                     });
                 })

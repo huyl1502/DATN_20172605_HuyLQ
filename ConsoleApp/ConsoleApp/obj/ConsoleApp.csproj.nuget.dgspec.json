@@ -1,32 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj": {}
+    "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {
+    "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\huyl1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\obj\\",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\huyl1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://118.70.81.222:8089/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,8 +51,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -66,47 +60,42 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj": {
+    "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\huyl1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\obj\\",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\huyl1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://118.70.81.222:8089/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj"
+              "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj"
               },
-              "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj": {
-                "projectPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj"
+              "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj": {
+                "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj"
               },
-              "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj": {
-                "projectPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj"
+              "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj": {
+                "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj"
               }
             }
           }
@@ -132,8 +121,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -142,33 +130,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj": {
+    "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj",
         "projectName": "Engine",
-        "projectPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj",
-        "packagesPath": "C:\\Users\\huyl1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\obj\\",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\huyl1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://118.70.81.222:8089/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -192,8 +175,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -202,41 +184,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj": {
+    "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj",
         "projectName": "SharedComponent",
-        "projectPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj",
-        "packagesPath": "C:\\Users\\huyl1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\obj\\",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\SharedComponent.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\SharedComponent\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\huyl1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://118.70.81.222:8089/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj"
+              "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj"
               }
             }
           }
@@ -262,8 +239,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -272,7 +248,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
