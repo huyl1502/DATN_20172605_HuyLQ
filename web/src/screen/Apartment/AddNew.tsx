@@ -37,7 +37,7 @@ export default function ApartmentAddNew() {
         try {
             let request = new ApartmentDTO();
             request.Item = apartment;
-            let res = await HttpUtils.post<Apartment>(ApiUrl.ApartmentAddNewUrl, request);
+            let res = await HttpUtils.post<object>(ApiUrl.ApartmentAddNewUrl, request);
             alert.showAlert("success", "Lưu bản ghi thành công!");
         }
         catch (ex: any) {

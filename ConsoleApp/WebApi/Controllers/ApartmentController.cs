@@ -48,11 +48,12 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("AddNew")]
-        public void AddNewApartment(ApartmentDTO request)
+        public ApartmentDTO AddNewApartment(ApartmentDTO request)
         {
             var item = request.Item;
             Validate(item);
             _collection.InsertItem(request.Item);
+            return _response;
         }
 
         [HttpPost]
