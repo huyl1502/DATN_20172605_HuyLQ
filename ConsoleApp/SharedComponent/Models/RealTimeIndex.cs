@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Models;
@@ -16,10 +17,15 @@ namespace Models
 
         public const string C_Time = "Time";
         [JsonPropertyName(C_Time)]
-        public DateTime Time { get; set; }
+        [BsonDateTimeOptions(Kind = DateTimeKind.Utc)]
+        public DateTime? Time { get; set; }
 
-        public const string C_Measurement = "Measurement";
-        [JsonPropertyName(C_Measurement)]
-        public List<Index> Measurement { get; set; }
+        public const string C_Type = "Type";
+        [JsonPropertyName(C_Type)]
+        public int? Type { get; set; }
+
+        public const string C_Value = "Value";
+        [JsonPropertyName(C_Value)]
+        public double? Value { get; set; }
     }
 }

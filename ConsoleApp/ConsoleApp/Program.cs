@@ -8,9 +8,9 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Engine.Register(new Program());
+            AsyncEngine.Start(new Program());
 
-            while (true) { }
+            while (BaseController.Client != null) { }
         }
     }
 }

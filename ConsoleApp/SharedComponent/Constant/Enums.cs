@@ -13,5 +13,12 @@ namespace SharedComponent.Constant
             Succucess = 0,
             Error = 1,
         }
+
+        public enum IndexType
+        {
+            Temp = 1,
+            Humidity = 2,
+            Gas = 3,
+        }
     }
 }

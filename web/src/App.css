@@ -37,3 +37,13 @@
   }
 }
 
+.datepicker {
+  width: 100%;
+}
+
+.header-title {
+  font-weight: bold;
+  opacity: 0.75;
+  width: 90%;
+  text-align: left;
+}

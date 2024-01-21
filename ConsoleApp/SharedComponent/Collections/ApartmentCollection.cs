@@ -25,7 +25,7 @@ namespace Collections
             Collection.FindOneAndUpdate<Apartment>(filter, update);
         }
 
-        public Apartment GetApartment_By(string code)
+        public Apartment GetApartment_ByCode(string code)
         {
             var filter = Builders<Apartment>.Filter.Eq(Apartment.C_Code, code);
             var rs = Collection.Find<Apartment>(filter);

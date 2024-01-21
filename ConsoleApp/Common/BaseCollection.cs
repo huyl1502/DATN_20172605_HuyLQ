@@ -28,6 +28,11 @@ namespace System
             Collection.InsertOne(item);
         }
 
+        public void InsertItems(List<T> lstItem)
+        {
+            Collection.InsertMany(lstItem);
+        }
+
         public List<T> GetItems()
         {
             var filter = Builders<T>.Filter.Empty;

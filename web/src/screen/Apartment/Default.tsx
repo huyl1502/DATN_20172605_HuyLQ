@@ -3,16 +3,15 @@ import { useEffect, useState } from "react";
 import HttpUtils from "../../Utils/HttpUtils";
 import ApiUrl from "../../constant/ApiUrl";
 import Apartment from "../../models/Apartment";
-import AddIcon from '@mui/icons-material/Add';
 import ReplayIcon from '@mui/icons-material/Replay';
 import ApartmentDTO from "../../DTO/ApartmentDTO";
 
 export default function ApartmentDefault() {
     const [lstApartment, setLstApartment] = useState(new Array<Apartment>());
 
-    const loadData = async () => {
+    async function loadData() {
         const res = await HttpUtils.get<ApartmentDTO>(ApiUrl.ApartmentGetAllUrl);
-        setLstApartment(res.ListApartment!);
+        setLstApartment(res.ListItems!);
     }
 
     useEffect(() => {
@@ -31,12 +30,10 @@ export default function ApartmentDefault() {
             <Grid container spacing={2}>
                 <Grid item xs={12} style={{ padding: 0 }}>
                     <Stack ml={2} spacing={2} direction="row" justifyContent={"space-between"}>
-                        <Typography variant="h5">Danh sách căn hộ</Typography>
-                        <Button variant="contained" style={{ backgroundColor: "#c02135" }}
-                            onClick={() => {
-
-                            }}
-                        ><AddIcon fontSize="small" />Thêm mới</Button>
+                        <Typography className="header-title" variant="h5">Danh sách căn hộ</Typography>
+                        <Button variant="contained" style={{ backgroundColor: "#c02135" }}>
+                            <Link href='./addnew' style={{ textDecoration: "none", color: "white" }} > Thêm mới </Link>
+                        </Button>
                     </Stack>
                 </Grid>
 

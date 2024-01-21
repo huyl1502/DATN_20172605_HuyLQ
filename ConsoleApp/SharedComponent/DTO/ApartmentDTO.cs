@@ -16,6 +16,9 @@ namespace SharedComponent.DTO
         [JsonPropertyName("Name")]
         public string Name { get; set; }
 
+        [JsonPropertyName("Date")]
+        public DateTime? Date { get; set; }
+
         [JsonPropertyName("ListStatus")]
         public List<KeyValuePair<int, string>> ListStatus { get; set; }
     }

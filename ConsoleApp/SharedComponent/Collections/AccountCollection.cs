@@ -32,7 +32,7 @@ namespace Collections
 
         public Account getAccount_ByUserName(string un)
         {
-            var filter = Builders<Account>.Filter.Empty;
+            var filter = Builders<Account>.Filter.Eq(fi => fi.UserName, un);
             var rs = Collection.Find<Account>(filter).ToList().FirstOrDefault();
             return rs;
         }

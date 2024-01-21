@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RabbitMQ.Client" Version="6.7.0" />
+    <None Remove="law1gdqz.c3q~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\Dll\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="M2Mqtt.Net">
+      <HintPath>..\Dll\M2Mqtt.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
 

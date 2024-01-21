@@ -8,6 +8,8 @@ using Models;
 using SharedComponent.DTO;
 using Collections;
 using SharedComponent.Constant;
+using static SharedComponent.Constant.Enums;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi.Controllers
 {
@@ -18,6 +20,16 @@ namespace WebApi.Controllers
         ApartmentCollection _collection = new ApartmentCollection();
         ApartmentDTO _response = new ApartmentDTO();
 
+        #region Validate
+        void Validate(Apartment item)
+        {
+            if (string.IsNullOrEmpty(item.Code)
+                || string.IsNullOrEmpty(item.Name)
+                || !item.Status.HasValue)
+                throw new Exception();
+        }
+        #endregion
+
         [HttpGet]
         [Route("GetAll")]
         public ApartmentDTO GetAllApartment()
@@ -27,7 +39,7 @@ namespace WebApi.Controllers
             {
                 lstItem.ForEach(item =>
                 {
-                    item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Apartment.dctStatus, item.Status);
+                    item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Apartment.dctStatus, item.Status.Value);
                 });
             }
             _response.ListItems = lstItem;
@@ -38,6 +50,8 @@ namespace WebApi.Controllers
         [Route("AddNew")]
         public void AddNewApartment(ApartmentDTO request)
         {
+            var item = request.Item;
+            Validate(item);
             _collection.InsertItem(request.Item);
         }
 
@@ -45,16 +59,32 @@ namespace WebApi.Controllers
         [Route("Edit")]
         public void EditApartment(ApartmentDTO request)
         {
-            _collection.UpdateItem(request.Item);
+            var item = request.Item;
+            Validate(item);
+            _collection.UpdateItem(item);
         }
 
         [HttpPost]
-        [Route("getItem2Display")]
+        [Route("GetItem2Display")]
         public ApartmentDTO getItem2Display(ApartmentDTO request)
         {
-            var item = _collection.GetApartment_By(request.Code);
-            item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Apartment.dctStatus, item.Status);
+            var item = _collection.GetApartment_ByCode(request.Code);
+            item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Apartment.dctStatus, item.Status.Value);
             _response.Item = item;
+
+            var indexBucketHisCollection = new IndexBucketHistoryCollection();
+            var date = request.Date.HasValue ? request.Date : DateTime.Now.AddDays(-1);
+            var lstIndexBucketHis = indexBucketHisCollection.GetListIndexBucketHis_ByApartmentCodeAndDay(request.Code, date.Value);
+            _response.Item.ListIndexBucketHis = lstIndexBucketHis;
+
+            var realTimeIndexCollection = new RealTimeIndexCollection();
+            var indexTemp = realTimeIndexCollection.GetListRealTimeIndex_ByCodeAndType(request.Code, (int)IndexType.Temp);
+            var indexHumidity = realTimeIndexCollection.GetListRealTimeIndex_ByCodeAndType(request.Code, (int)IndexType.Humidity);
+            var indexGas = realTimeIndexCollection.GetListRealTimeIndex_ByCodeAndType(request.Code, (int)IndexType.Gas);
+            indexTemp.AddRange(indexHumidity);
+            indexTemp.AddRange(indexGas);
+            _response.Item.ListRealTimeIndex = indexTemp;
+
             return _response;
         }
 

@@ -126,7 +126,6 @@ export default function Layout() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} />
-                    <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
             <Drawer variant="permanent" open={open}>
