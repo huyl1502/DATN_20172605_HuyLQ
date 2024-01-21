@@ -1,0 +1,14 @@
+*.suo
+*.tmp
+*.csproj.user
+*.vbw
+/**/*.vs
+/Common/**/bin
+/**/obj
+/development/**/log4net.2.0.3
+/development/**/NPOI.2.1.3.1
+.vs
+/**/packages
+/**/debug
+/**/bin
+/**/obj

@@ -1,4 +1,5 @@
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import ApartmentIcon from '@mui/icons-material/Apartment';
 
 export default class FeatureManager {
     static FeatureCollection = [
@@ -6,6 +7,11 @@ export default class FeatureManager {
             url: "/dashboard",
             label: "Dashboard",
             icon: <DashboardIcon />,
+        },
+        {
+            url: "/apartment/list",
+            label: "Danh sách căn hộ",
+            icon: <ApartmentIcon />,
         }
     ]
 }

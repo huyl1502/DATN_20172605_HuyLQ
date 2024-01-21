@@ -17,11 +17,21 @@ namespace Collections
             }
         }
 
-        public RealTimeIndex GetLastMeasurement()
+        public List<RealTimeIndex> GetListRealTimeIndex_ByCodeAndType(string ApartmentCode, int Type)
         {
-            var filter = Builders<RealTimeIndex>.Filter.Empty;
-            var rs = Collection.Find<RealTimeIndex>(filter).ToList().FirstOrDefault();
-            return rs;
+            var builder = Builders<RealTimeIndex>.Filter;
+            var filter = builder.Eq(f => f.ApartmentCode, ApartmentCode) & builder.Eq(f => f.Type, Type);
+
+            var lstIndex = Collection.Aggregate().SortByDescending(index => index.Time).Match(filter).Limit(20).ToList().OrderBy(index => index.Time);
+            return lstIndex.ToList();
+        }
+
+        public void DeleteIndex_ById(RealTimeIndex item)
+        {
+            var builder = Builders<RealTimeIndex>.Filter;
+            var filter = builder.Eq(f => f.Id, item.Id);
+
+            Collection.DeleteOne(filter);
         }
     }
 }

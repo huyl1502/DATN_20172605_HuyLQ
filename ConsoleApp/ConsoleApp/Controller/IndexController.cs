@@ -14,9 +14,9 @@ namespace ConsoleApp.Controllers
     {
         RealTimeIndexCollection _realTimeIndexCollection = new RealTimeIndexCollection();
 
-        public void InsertMeasurement(RealTimeIndex item)
+        public void InsertMeasurement(List<RealTimeIndex> lstItem)
         {
-            _realTimeIndexCollection.InsertItem(item);
+            _realTimeIndexCollection.InsertItems(lstItem);
         }
     }
 }

@@ -1,50 +1,75 @@
-﻿using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Models;
 using System.Text;
 using System.Threading.Tasks;
-using ConsoleApp.Models.Constant;
 using Models;
+using uPLibrary.Networking.M2Mqtt;
+using uPLibrary.Networking.M2Mqtt.Messages;
 
 namespace ConsoleApp.Common
 {
     public class BaseController : Controller
     {
-        static ConnectionFactory _factory = new ConnectionFactory { HostName = "localhost" };
-        static IConnection _connection;
-        public static IConnection Connection
+        static string _topic = "DATN20172605/Device";
+        static string _serverId;
+        public static string ServerId
         {
             get
             {
-                if (_connection == null)
+                if (_serverId == null)
                 {
-                    Connect(5);
+                    _serverId = Guid.NewGuid().ToString();
                 }
-                return _connection;
+                return _serverId;
             }
         }
-        static IModel _channel;
 
-        static void MsgReceived(object model, BasicDeliverEventArgs ea)
+        static MqttClient _mqttClient;
+        public static MqttClient Client
+        {
+            get
+            {
+                if (_mqttClient == null)
+                {
+                    _mqttClient = new MqttClient(
+                    "broker.emqx.io",
+                    1883,
+                    false,
+                    MqttSslProtocols.None,
+                    null,
+                    null
+                );
+
+                    ConnectMqtt(5);
+                }
+                return _mqttClient;
+            }
+        }
+
+        static T GetMqttMessage<T>(MqttMsgPublishEventArgs e)
+        {
+            string content = System.Text.Encoding.UTF8.GetString(e.Message);
+            var context = Newtonsoft.Json.Linq.JArray
+                .Parse(content)
+                .ToObject<T>();
+            return context;
+        }
+
+        static void MqttMsgReceived(object sender, MqttMsgPublishEventArgs e)
         {
             try
             {
-                var body = ea.Body.ToArray();
-
-                var message = Encoding.UTF8.GetString(body);
-                var context = Newtonsoft.Json.Linq.JObject
-                .Parse(message)
-                .ToObject<RealTimeIndex>();
+                var data = GetMqttMessage<List<RealTimeIndex>>(e);
+                Screen.Info($"{e}");
 
                 var c = Engine.GetController<BaseController>("Index");
 
                 var action = c.GetMethod("InsertMeasurement");
                 if (action != null)
                 {
-                    var v = context ?? new object { };
+                    var v = data ?? new object { };
                     AsyncEngine.CreateThread(() => action.Invoke(c, new object[] { v }));
                 }
             }
@@ -54,26 +79,22 @@ namespace ConsoleApp.Common
             }
         }
 
-        static void Connect(int checkConnectionSeconds = 0)
+        static void ConnectMqtt(int checkConnectionSeconds = 0)
         {
-            if (_connection != null && _connection.IsOpen) return;
-            _connection.ConnectionShutdown += (s, e) =>
+            if (_mqttClient != null && _mqttClient.IsConnected) return;
+            _mqttClient.MqttMsgPublishReceived += MqttMsgReceived;
+
+            _mqttClient.Connect(ServerId);
+            _mqttClient.ConnectionClosed += (s, e) =>
             {
                 Screen.Warning("Connection closed");
             };
 
-            _connection = _factory.CreateConnection();
-            _channel = _connection.CreateModel();
-            _channel.ExchangeDeclare(exchange: "indexs", type: ExchangeType.Fanout);
-            var queueName = _channel.QueueDeclare().QueueName;
-            _channel.QueueBind(queue: queueName,
-                              exchange: "indexs",
-                              routingKey: string.Empty);
-
-            Console.WriteLine(" [*] Waiting for indexs.");
-
-            var consumer = new EventingBasicConsumer(_channel);
-            consumer.Received += MsgReceived;
+            if (_mqttClient.IsConnected)
+            {
+                Subscribe(_topic);
+                Screen.Success("done\n");
+            }
 
             if (checkConnectionSeconds > 0)
             {
@@ -83,10 +104,15 @@ namespace ConsoleApp.Common
                     while (true)
                     {
                         System.Threading.Thread.Sleep(interval);
-                        Connect();
+                        ConnectMqtt();
                     }
                 });
             }
+        }
+
+        protected static void Subscribe(string topic)
+        {
+            _mqttClient.Subscribe(new string[] { topic }, new byte[] { 0 });
         }
     }
 }

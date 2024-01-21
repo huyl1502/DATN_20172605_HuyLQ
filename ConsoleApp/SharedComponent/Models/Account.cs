@@ -21,5 +21,9 @@ namespace Models
         public const string C_PersonCode = "PersonCode";
         [JsonPropertyName(C_PersonCode)]
         public string PersonCode { get; set; }
+
+        public const string C_AccessToken = "AccessToken";
+        [JsonPropertyName(C_AccessToken)]
+        public string AccessToken { get; set; }
     }
 }

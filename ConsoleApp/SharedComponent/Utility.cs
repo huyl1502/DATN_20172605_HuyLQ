@@ -14,5 +14,12 @@ namespace Utils
             dict.TryGetValue(key, out rs);
             return rs;
         }
+
+        public static string GetConfigFile()
+        {
+            var filePath = Environment.CurrentDirectory;
+            var rootFolder = System.IO.Path.Combine(filePath, "appsettings.json");
+            return rootFolder;
+        }
     }
 }

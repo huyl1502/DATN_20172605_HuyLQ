@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -6,14 +7,18 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using Quartz;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using WebApi.Hub;
+using WebApi.TaskSchedule;
 
 namespace WebApi
 {
@@ -33,6 +38,31 @@ namespace WebApi
             services.AddControllers();
             services.AddMvc().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase);
             services.AddSignalR();
+            services.AddQuartz(opts => {
+                opts.UseMicrosoftDependencyInjectionJobFactory();
+                var jobKey = JobKey.Create(nameof(CalcIndexBucketHistory));
+                opts.AddJob<CalcIndexBucketHistory>(jobKey)
+                .AddTrigger(trigger =>
+                    trigger
+                        .ForJob(jobKey)
+                        .WithCronSchedule("0 00 00 * * ? *"));
+            });
+            services.AddQuartzHostedService(opts => {
+                opts.WaitForJobsToComplete = true;
+            });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opts =>
+            {
+                opts.RequireHttpsMetadata = false;
+                opts.SaveToken = true;
+                opts.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = Configuration["Jwt:Audience"],
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                };
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
@@ -56,11 +86,12 @@ namespace WebApi
                 .AllowCredentials() // allow credentials
                );
 
-            app.UseHttpsRedirection();
+            app.UseMiddleware<ErrorHandlingMiddleware>();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

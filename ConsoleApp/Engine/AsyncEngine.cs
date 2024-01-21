@@ -38,6 +38,16 @@ namespace System
             }
         }
 
+        public static void Start(object application)
+        {
+            Register(application);
+
+            _watings = new Queue<Thread>();
+            _running = new Stack<Thread>();
+
+            CreateThread(LoadThread);
+        }
+
         public static void End()
         {
             while (_running.Count > 0)
