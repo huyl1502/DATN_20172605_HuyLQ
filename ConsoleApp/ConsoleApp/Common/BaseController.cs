@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Models;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
+using static SharedComponent.Constant.Enums;
 
 namespace ConsoleApp.Common
 {
@@ -51,10 +52,28 @@ namespace ConsoleApp.Common
         static T GetMqttMessage<T>(MqttMsgPublishEventArgs e)
         {
             string content = System.Text.Encoding.UTF8.GetString(e.Message);
-            var context = Newtonsoft.Json.Linq.JArray
-                .Parse(content)
-                .ToObject<T>();
-            return context;
+            try
+            {
+                var context = Newtonsoft.Json.Linq.JArray
+                    .Parse(content)
+                    .ToObject<T>();
+                return context;
+            }
+            catch
+            {
+                string[] list = content.Split("~");
+
+                var tempData = new RealTimeIndex { ApartmentCode = list[0], Time = DateTime.Now, Type = (int)IndexType.Temp, Value = Convert.ToDouble(list[(int)IndexType.Temp]) };
+                var humidityData = new RealTimeIndex { ApartmentCode = list[0], Time = DateTime.Now, Type = (int)IndexType.Humidity, Value = Convert.ToDouble(list[(int)IndexType.Humidity]) };
+                var gasData = new RealTimeIndex { ApartmentCode = list[0], Time = DateTime.Now, Type = (int)IndexType.Gas, Value = Convert.ToDouble(list[(int)IndexType.Gas]) };
+                var data = new List<RealTimeIndex>() { tempData, humidityData, gasData };
+                var message = Newtonsoft.Json.Linq.JArray.FromObject(data).ToString();
+
+                var context = Newtonsoft.Json.Linq.JArray
+                    .Parse(message)
+                    .ToObject<T>();
+                return context;
+            }
         }
 
         static void MqttMsgReceived(object sender, MqttMsgPublishEventArgs e)
@@ -62,7 +81,7 @@ namespace ConsoleApp.Common
             try
             {
                 var data = GetMqttMessage<List<RealTimeIndex>>(e);
-                Screen.Info($"{e}");
+                Screen.Info($"Get Index!");
 
                 var c = Engine.GetController<BaseController>("Index");
 

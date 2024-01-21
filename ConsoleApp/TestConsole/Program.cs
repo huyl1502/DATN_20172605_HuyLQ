@@ -76,40 +76,43 @@ namespace TestConsole
             {
                 lstApartments.ForEach(apartment =>
                 {
-                    Thread thread = new Thread(() =>
+                    if (apartment.Code != "NhaCuaHuy01")
                     {
-                        var mqttClient = new MqttClient(
-                            "broker.emqx.io",
-                            1883,
-                            false,
-                            MqttSslProtocols.None,
-                            null,
-                            null
-                        );
-                        var clientId = Guid.NewGuid().ToString();
-                        mqttClient.Connect(clientId);
-
-                        while (true)
+                        Thread thread = new Thread(() =>
                         {
-                            var tempIndex = rand.NextDouble() * 5;
-                            var humidityIndex = rand.NextDouble() * 10;
-                            var gasIndex = rand.NextDouble();
+                            var mqttClient = new MqttClient(
+                                "broker.emqx.io",
+                                1883,
+                                false,
+                                MqttSslProtocols.None,
+                                null,
+                                null
+                            );
+                            var clientId = Guid.NewGuid().ToString();
+                            mqttClient.Connect(clientId);
 
-                            var tempData = new RealTimeIndex { ApartmentCode = apartment.Code, Time = DateTime.Now, Type = (int)IndexType.Temp, Value = tempIndex };
-                            var humidityData = new RealTimeIndex { ApartmentCode = apartment.Code, Time = DateTime.Now, Type = (int)IndexType.Humidity, Value = humidityIndex };
-                            var gasData = new RealTimeIndex { ApartmentCode = apartment.Code, Time = DateTime.Now, Type = (int)IndexType.Gas, Value = gasIndex };
+                            while (true)
+                            {
+                                var tempIndex = rand.NextDouble() * 5;
+                                var humidityIndex = rand.NextDouble() * 10;
+                                var gasIndex = rand.NextDouble();
 
-                            var data = new List<RealTimeIndex>() { tempData, humidityData, gasData };
+                                var tempData = new RealTimeIndex { ApartmentCode = apartment.Code, Time = DateTime.Now, Type = (int)IndexType.Temp, Value = tempIndex };
+                                var humidityData = new RealTimeIndex { ApartmentCode = apartment.Code, Time = DateTime.Now, Type = (int)IndexType.Humidity, Value = humidityIndex };
+                                var gasData = new RealTimeIndex { ApartmentCode = apartment.Code, Time = DateTime.Now, Type = (int)IndexType.Gas, Value = gasIndex };
 
-                            var message = Newtonsoft.Json.Linq.JArray.FromObject(data).ToString();
-                            var body = Encoding.UTF8.GetBytes(message);
+                                var data = new List<RealTimeIndex>() { tempData, humidityData, gasData };
 
-                            mqttClient.Publish("DATN20172605/Device", body);
+                                var message = Newtonsoft.Json.Linq.JArray.FromObject(data).ToString();
+                                var body = Encoding.UTF8.GetBytes(message);
 
-                            Thread.Sleep(5000);
-                        }
-                    });
-                    thread.Start();
+                                mqttClient.Publish("DATN20172605/Device", body);
+
+                                Thread.Sleep(5000);
+                            }
+                        });
+                        thread.Start();
+                    }
                 });
             }
         }

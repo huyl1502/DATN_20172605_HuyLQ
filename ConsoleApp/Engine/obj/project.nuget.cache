@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "db+cCuf8Qz+YbCHoDK8TEFuKbn+Y9/nzmN+mDRXqWe2k3R+yGsjaLciLG2sdBT49qE3mQeumUBH0hdAgybbpOQ==",
+  "dgSpecHash": "u0beHlbHha2oETUe+B951vXOrZ7UWihj3iHW8PMiNuQ095SJ2K477QWL1Yk5viIA9aqunzew/suTBKqfddAIuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\huyl1\\Source\\Repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj",
+  "projectFilePath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Engine\\Engine.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://118.70.81.222:8089/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }

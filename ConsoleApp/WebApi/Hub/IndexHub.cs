@@ -34,7 +34,8 @@ namespace WebApi.Hub
                     var indexGas = realTimeIndexCollection.GetListRealTimeIndex_ByCodeAndType(code, (int)IndexType.Gas);
                     indexTemp.AddRange(indexHumidity);
                     indexTemp.AddRange(indexGas);
-                    _hubContext.Clients.All.SendAsync("GetLastIndex_ByApartmentCode_Response", indexTemp);
+                    var responseHub = "GetLastIndex_ByApartmentCode_Response" + code;
+                    _hubContext.Clients.All.SendAsync(responseHub, indexTemp);
                 }
             });
             thread.Start();
