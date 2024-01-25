@@ -19,7 +19,7 @@ export default class HttpUtils {
                 "Content-Type": "application/json",
                 "X-RapidAPI-Key": "your-api-key",
                 "X-RapidAPI-Host": "jokes-by-api-ninjas.p.rapidapi.com",
-                Authorization: "Bearer " + acc["AccessToken"],
+                "Authorization": "Bearer " + acc["AccessToken"],
             }
         }
 
@@ -59,7 +59,7 @@ export default class HttpUtils {
                 "Content-Type": "application/json",
                 "X-RapidAPI-Key": "your-api-key",
                 "X-RapidAPI-Host": "jokes-by-api-ninjas.p.rapidapi.com",
-                Authorization: "Bearer " + acc["AccessToken"],
+                "Authorization": "Bearer " + acc["AccessToken"],
             }
         }
 
@@ -68,6 +68,9 @@ export default class HttpUtils {
             headers: header,
             body: JSON.stringify(requestData),
         }).then(response => {
+            if (response.status == 401) {
+                //window.location.href = window.location.origin + "/login";
+            }
             if (response.ok == false)
                 throw new Error("Error!");
             else {

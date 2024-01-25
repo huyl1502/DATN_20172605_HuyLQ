@@ -7,6 +7,11 @@ export default class ApiUrl {
     static ApartmentSetupAddNewUrl: string = "/Apartment/SetupAddNew";
     static ApartmentAddNewUrl: string = "/Apartment/AddNew";
 
+    static DeviceGetAllUrl: string = "/Device/GetAll";
+    static DeviceGetItemByCodeUrl: string = "/Device/GetItem2Display";
+    static DeviceSetupAddNewUrl: string = "/Device/SetupAddNew";
+    static DeviceAddNewUrl: string = "/Device/AddNew";
+
     static PersonGetAllUrl: string = "/Person/GetAll";
     static PersonAddNewUrl: string = "/Person/AddNew";
 
