@@ -8,7 +8,7 @@ namespace SharedComponent.Constant
 {
     public class MyDictionary
     {
-        public static class Apartment
+        public static class Status
         {
             public static int Active = 1;
             public static int InActive = 0;

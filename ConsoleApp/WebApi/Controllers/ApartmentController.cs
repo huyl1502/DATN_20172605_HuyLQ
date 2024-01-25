@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi.Controllers
 {
+    //[Authorize]
     [ApiController]
     [Route("Apartment")]
     public class ApartmentController : ControllerBase
@@ -39,7 +40,7 @@ namespace WebApi.Controllers
             {
                 lstItem.ForEach(item =>
                 {
-                    item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Apartment.dctStatus, item.Status.Value);
+                    item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Status.dctStatus, item.Status.Value);
                 });
             }
             _response.ListItems = lstItem;
@@ -70,7 +71,7 @@ namespace WebApi.Controllers
         public ApartmentDTO getItem2Display(ApartmentDTO request)
         {
             var item = _collection.GetApartment_ByCode(request.Code);
-            item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Apartment.dctStatus, item.Status.Value);
+            item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Status.dctStatus, item.Status.Value);
             _response.Item = item;
 
             var indexBucketHisCollection = new IndexBucketHistoryCollection();
@@ -93,7 +94,7 @@ namespace WebApi.Controllers
         [Route("SetupAddNew")]
         public ApartmentDTO SetupAddNew()
         {
-            var lstStatus = MyDictionary.Apartment.dctStatus.ToList();
+            var lstStatus = MyDictionary.Status.dctStatus.ToList();
             _response.ListStatus = lstStatus;
             return _response;
         }
