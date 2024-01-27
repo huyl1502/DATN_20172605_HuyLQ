@@ -50,7 +50,7 @@ namespace WebApi.Controllers
         [Route("GetItem2Display")]
         public DeviceDTO getItem2Display(DeviceDTO request)
         {
-            var item = _collection.GetApartment_ByCode(request.Code);
+            var item = _collection.GetDevice_ByCode(request.Code);
             item.StatusName = Utils.Utility.GetDictionaryValue(MyDictionary.Status.dctStatus, item.Status.Value);
             _response.Item = item;
 

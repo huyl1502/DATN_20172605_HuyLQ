@@ -4,6 +4,7 @@ using System.Linq;
 using System.Models;
 using System.Text;
 using System.Threading.Tasks;
+using Collections;
 using Models;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
@@ -62,10 +63,14 @@ namespace ConsoleApp.Common
             catch
             {
                 string[] list = content.Split("~");
+                var deviceCode = list[0];
 
-                var tempData = new RealTimeIndex { ApartmentCode = list[0], Time = DateTime.Now, Type = (int)IndexType.Temp, Value = Convert.ToDouble(list[(int)IndexType.Temp]) };
-                var humidityData = new RealTimeIndex { ApartmentCode = list[0], Time = DateTime.Now, Type = (int)IndexType.Humidity, Value = Convert.ToDouble(list[(int)IndexType.Humidity]) };
-                var gasData = new RealTimeIndex { ApartmentCode = list[0], Time = DateTime.Now, Type = (int)IndexType.Gas, Value = Convert.ToDouble(list[(int)IndexType.Gas]) };
+                DeviceCollection deviceCollection = new DeviceCollection();
+                var apartmentCode = deviceCollection.GetDevice_ByCode(deviceCode).ApartmentCode;
+
+                var tempData = new RealTimeIndex { ApartmentCode = apartmentCode, Time = DateTime.Now, Type = (int)IndexType.Temp, Value = Convert.ToDouble(list[(int)IndexType.Temp]) };
+                var humidityData = new RealTimeIndex { ApartmentCode = apartmentCode, Time = DateTime.Now, Type = (int)IndexType.Humidity, Value = Convert.ToDouble(list[(int)IndexType.Humidity]) };
+                var gasData = new RealTimeIndex { ApartmentCode = apartmentCode, Time = DateTime.Now, Type = (int)IndexType.Gas, Value = Convert.ToDouble(list[(int)IndexType.Gas]) };
                 var data = new List<RealTimeIndex>() { tempData, humidityData, gasData };
                 var message = Newtonsoft.Json.Linq.JArray.FromObject(data).ToString();
 

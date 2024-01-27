@@ -96,6 +96,17 @@ export default function DeviceAddNew() {
                         }}
                     />
                 </Grid>
+                <Grid item xs={4}>
+                    <MyTextBox
+                        label="Mã căn hộ"
+                        required
+                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                            let item = device;
+                            item.ApartmentCode = event.target.value;
+                            setDevice(item);
+                        }}
+                    />
+                </Grid>
                 <Grid item xs={8}>
                     <MyTextBox
                         label="Mô tả"

@@ -66,6 +66,12 @@ export default function DeviceDisplay() {
                         value={device.StatusName}
                     />
                 </Grid>
+                <Grid item xs={4}>
+                    <MyTextBox
+                        disabled
+                        value={device.ApartmentCode}
+                    />
+                </Grid>
                 <Grid item xs={8}>
                     <MyTextBox
                         disabled
