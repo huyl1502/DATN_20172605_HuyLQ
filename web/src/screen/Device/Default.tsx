@@ -63,7 +63,7 @@ export default function DeviceDefault() {
                                         </TableCell>
                                         <TableCell align="left">{item.ApartmentCode}</TableCell>
                                         <TableCell align="left">{item.Description}</TableCell>
-                                        <TableCell align="center">{item.StatusName}</TableCell>
+                                        <TableCell style={{ color: "green" }} align="center">{item.StatusName}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
