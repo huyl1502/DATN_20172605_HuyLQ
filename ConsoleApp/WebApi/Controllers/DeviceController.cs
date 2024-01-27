@@ -10,6 +10,7 @@ using Collections;
 using SharedComponent.Constant;
 using static SharedComponent.Constant.Enums;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace WebApi.Controllers
 {
