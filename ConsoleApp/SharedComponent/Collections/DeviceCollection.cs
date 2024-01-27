@@ -18,7 +18,7 @@ namespace Collections
             }
         }
 
-        public Device GetApartment_ByCode(string code)
+        public Device GetDevice_ByCode(string code)
         {
             var filter = Builders<Device>.Filter.Eq(Device.C_Code, code);
             var rs = Collection.Find<Device>(filter);

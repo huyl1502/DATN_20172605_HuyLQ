@@ -44,6 +44,7 @@ export default function DeviceDefault() {
                                 <TableRow>
                                     <TableCell style={{ color: "white", fontWeight: "bold", width: "40px" }}>STT</TableCell>
                                     <TableCell style={{ color: "white", fontWeight: "bold" }} align="center">Mã thiết bị</TableCell>
+                                    <TableCell style={{ color: "white", fontWeight: "bold" }} align="center">Mã căn hộ</TableCell>
                                     <TableCell style={{ color: "white", fontWeight: "bold" }} align="center">Mô tả</TableCell>
                                     <TableCell style={{ color: "white", fontWeight: "bold" }} align="center">Trạng thái</TableCell>
                                 </TableRow>
@@ -60,6 +61,7 @@ export default function DeviceDefault() {
                                                 {item.Code}
                                             </Link>
                                         </TableCell>
+                                        <TableCell align="left">{item.ApartmentCode}</TableCell>
                                         <TableCell align="left">{item.Description}</TableCell>
                                         <TableCell align="center">{item.StatusName}</TableCell>
                                     </TableRow>

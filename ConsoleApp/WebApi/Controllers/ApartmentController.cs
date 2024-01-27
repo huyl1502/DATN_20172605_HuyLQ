@@ -31,6 +31,7 @@ namespace WebApi.Controllers
         }
         #endregion
 
+        [Authorize]
         [HttpGet]
         [Route("GetAll")]
         public ApartmentDTO GetAllApartment()

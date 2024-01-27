@@ -15,6 +15,10 @@ namespace Models
         [JsonPropertyName(C_Code)]
         public string Code { get; set; }
 
+        public const string C_ApartmentCode = "ApartmentCode";
+        [JsonPropertyName(C_ApartmentCode)]
+        public string ApartmentCode { get; set; }
+
         public const string C_Description = "Description";
         [JsonPropertyName(C_Description)]
         [BsonIgnoreIfNull]

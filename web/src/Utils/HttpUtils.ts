@@ -28,7 +28,7 @@ export default class HttpUtils {
             headers: header,
         }).then(response => {
             if (response.status == 401) {
-                //window.location.href = window.location.origin + "/login";
+                window.location.href = window.location.origin + "/login";
             }
             if (response.ok == false)
                 throw new Error("Error!");
@@ -69,7 +69,7 @@ export default class HttpUtils {
             body: JSON.stringify(requestData),
         }).then(response => {
             if (response.status == 401) {
-                //window.location.href = window.location.origin + "/login";
+                window.location.href = window.location.origin + "/login";
             }
             if (response.ok == false)
                 throw new Error("Error!");

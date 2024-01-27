@@ -52,12 +52,22 @@ namespace WebApi
             });
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opts =>
             {
+                opts.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context =>
+                    {
+                        context.Token = context.Request.Headers["Authorization"];
+                        return Task.CompletedTask;
+                    }
+                };
                 opts.RequireHttpsMetadata = false;
                 opts.SaveToken = true;
                 opts.TokenValidationParameters = new TokenValidationParameters()
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidateLifetime = true,
                     ValidAudience = Configuration["Jwt:Audience"],
                     ValidIssuer = Configuration["Jwt:Issuer"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
@@ -90,8 +100,8 @@ namespace WebApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
