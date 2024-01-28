@@ -63,7 +63,7 @@ export default function ApartmentDefault() {
                                         </TableCell>
                                         <TableCell align="left">{item.Name}</TableCell>
                                         <TableCell align="left">{item.Description}</TableCell>
-                                        <TableCell align="center">{item.StatusName}</TableCell>
+                                        <TableCell style={{ color: item.Status == 1 ? "green" : "red" }} align="center">{item.StatusName}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

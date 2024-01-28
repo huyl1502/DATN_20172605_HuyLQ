@@ -96,6 +96,8 @@ export default function Layout() {
     const navigate = useNavigate();
     const [open, setOpen] = React.useState(false);
 
+    var acc = JSON.parse(localStorage.getItem("account")!);
+
     const handleDrawerOpen = () => {
         setOpen(true);
     };

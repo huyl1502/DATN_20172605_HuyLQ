@@ -52,14 +52,6 @@ namespace WebApi
             });
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opts =>
             {
-                opts.Events = new JwtBearerEvents
-                {
-                    OnMessageReceived = context =>
-                    {
-                        context.Token = context.Request.Headers["Authorization"];
-                        return Task.CompletedTask;
-                    }
-                };
                 opts.RequireHttpsMetadata = false;
                 opts.SaveToken = true;
                 opts.TokenValidationParameters = new TokenValidationParameters()

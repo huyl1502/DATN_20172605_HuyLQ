@@ -10,10 +10,11 @@ using Collections;
 using SharedComponent.Constant;
 using static SharedComponent.Constant.Enums;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace WebApi.Controllers
 {
-    //[Authorize]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("Device")]
     public class DeviceController : ControllerBase
