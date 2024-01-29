@@ -22,6 +22,7 @@ namespace WebApi.TaskSchedule
             foreach(var group in lstGroups)
             {
                 var arrayMeasurements = new double?[24];
+                var arrayCounts = new int?[24];
 
                 var yesterday = DateTime.Now.AddDays(-1);
                 var indexBucket = new IndexBucketHistory {
@@ -36,12 +37,27 @@ namespace WebApi.TaskSchedule
                     {
                         if(index.Time.Value.Hour == i)
                         {
-                            arrayMeasurements[i] = arrayMeasurements[i] == null ? 0 + index.Value : arrayMeasurements[i] + index.Value;
+                            arrayCounts[i] = arrayCounts[i] == null ? 1 : arrayCounts[i] ++;
+                            arrayMeasurements[i] = arrayMeasurements[i] == null ? 0 + index.Value : (arrayMeasurements[i] + index.Value) / arrayCounts[i];
                         }
                     }
                 });
 
                 indexBucket.Measurements = arrayMeasurements.ToList();
+
+                int count = 0;
+                double sum = 0;
+                indexBucket.Measurements.ForEach(measurement =>
+                {
+                    if(measurement != null)
+                    {
+                        count++;
+                        sum += measurement.Value;
+                    }
+                });
+                indexBucket.Count = count;
+                indexBucket.Sum = sum;
+
                 lstIndexBucket.Add(indexBucket);
             }
 
