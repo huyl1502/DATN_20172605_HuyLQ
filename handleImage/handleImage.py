@@ -12,6 +12,7 @@ broker = 'broker.emqx.io'
 port = 1883
 topic = "DATN20172605/handleImage"
 publishTopic = "DATN20172605/getImage"
+warningTopic = "DATN20172605/warning"
 # Generate a Client ID with the subscribe prefix.
 client_id = f'subscribe-{random.randint(0, 100)}'
 # username = 'emqx'
@@ -59,6 +60,9 @@ def subscribe(client: mqtt_client):
                 Fire_Reported = Fire_Reported + 1
 
             print(Fire_Reported)
+
+            if Fire_Reported == 1:
+                client.publish(warningTopic, "")
         except:
             print("An exception occurred")
 
