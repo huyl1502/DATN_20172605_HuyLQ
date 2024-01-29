@@ -5,8 +5,8 @@
 #include "esp_camera.h"
 #include "Base64.h"
 
-const char* ssid = "FPT Telecom-8F16";
-const char* password = "10021524";
+const char* ssid = "Huy";
+const char* password = "h150201H";
 
 const char* mqtt_server = "broker.emqx.io";
 const unsigned int mqtt_port = 1883;

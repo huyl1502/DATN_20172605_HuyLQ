@@ -16,8 +16,8 @@ static char agasTemp[7];
 
 // Update these with values suitable for your network.
 
-const char* ssid = "FPT Telecom-8F16";
-const char* password = "10021524";
+const char* ssid = "Huy";
+const char* password = "h150201H";
 const char* mqtt_server = "broker.emqx.io";
 
 WiFiClient espClient;
@@ -51,6 +51,19 @@ void setup_wifi() {
   Serial.println(WiFi.localIP());
 }
 
+void warning() {
+    tone(12,220,125);
+    delay(125);
+    tone(12,2093,250);
+    delay(250);
+    tone(12,82,125);
+    delay(125);
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  warning();
+}
+
 void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
@@ -64,7 +77,7 @@ void reconnect() {
       // Once connected, publish an announcement...
       // client.publish("DATN20172605/Device", "MQTT Server is Connected");
       // ... and resubscribe
-      client.subscribe("device/warning");
+      client.subscribe("DATN20172605/warning");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -79,6 +92,8 @@ void setup() {
   Serial.begin(9600);
   setup_wifi();
   client.setServer(mqtt_server, 1883);
+  client.setCallback(callback);
+  pinMode(12,OUTPUT);
   dht.begin();
 }
 
@@ -102,6 +117,9 @@ void loop() {
     Serial.println("Failed to read!");
   }
   else {
+    if (g != 0) {
+      warning();
+    }
     dtostrf(h, 5, 2, humidityTemp);
     dtostrf(t, 6, 2, celsiusTemp);
     dtostrf(g, 5, 2, gasTemp);
