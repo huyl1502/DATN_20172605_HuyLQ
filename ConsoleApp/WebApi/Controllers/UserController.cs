@@ -4,10 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Models;
 using SharedComponent.DTO;
+using SharedComponent.Models.System;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,7 +63,7 @@ namespace WebApi.Controllers
             if (accountView != null)
             {
                 var accountDb = _accCollection.getAccount_ByUserName(accountView.UserName);
-                if(accountView.PassWord != accountDb.PassWord)
+                if (accountView.PassWord != accountDb.PassWord)
                 {
                     throw new Exception("Thông tin đăng nhập không hợp lệ");
                 }
@@ -75,7 +77,7 @@ namespace WebApi.Controllers
                     return _response;
                 }
             }
-            throw new Exception("Thông tin đăng nhập không hợp lệ");
+            throw new MyException((int)HttpStatusCode.BadRequest, "Thông tin đăng nhập không hợp lệ");
         }
     }
 }

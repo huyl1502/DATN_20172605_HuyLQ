@@ -144,3 +144,42 @@ C:\Users\admin\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\
 C:\Users\admin\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ref\ConsoleApp.dll
 C:\Users\admin\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.pdb
 C:\Users\admin\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.genruntimeconfig.cache
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\ConsoleApp.exe
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\ConsoleApp.deps.json
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\ConsoleApp.runtimeconfig.json
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\ConsoleApp.runtimeconfig.dev.json
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\ConsoleApp.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\ref\ConsoleApp.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\ConsoleApp.pdb
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\AWSSDK.Core.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\AWSSDK.SecurityToken.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\DnsClient.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\Snappier.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\ZstdSharp.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\Common.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\Engine.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\M2Mqtt.Net.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\SharedComponent.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\Common.pdb
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\Engine.pdb
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\bin\Debug\net5.0\SharedComponent.pdb
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.AssemblyInfo.cs
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.csproj.CopyComplete
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ref\ConsoleApp.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.pdb
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\ConsoleApp\obj\Debug\net5.0\ConsoleApp.genruntimeconfig.cache

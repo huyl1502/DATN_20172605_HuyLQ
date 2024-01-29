@@ -40,3 +40,18 @@ C:\Users\admin\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\D
 C:\Users\admin\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.dll
 C:\Users\admin\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\ref\SharedComponent.dll
 C:\Users\admin\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.pdb
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\bin\Debug\net5.0\SharedComponent.deps.json
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\bin\Debug\net5.0\SharedComponent.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\bin\Debug\net5.0\ref\SharedComponent.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\bin\Debug\net5.0\SharedComponent.pdb
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\bin\Debug\net5.0\Common.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\bin\Debug\net5.0\Common.pdb
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.csproj.AssemblyReference.cache
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.AssemblyInfoInputs.cache
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.AssemblyInfo.cs
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.csproj.CopyComplete
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\ref\SharedComponent.dll
+C:\Users\Nguyen Hien\source\repos\DATN_20172605_HuyLQ\ConsoleApp\SharedComponent\obj\Debug\net5.0\SharedComponent.pdb

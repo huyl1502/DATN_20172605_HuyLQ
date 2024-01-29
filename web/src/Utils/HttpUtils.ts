@@ -3,6 +3,7 @@ import { EnvConfig } from "./EnvConfig";
 
 export default class HttpUtils {
     static async get<T>(apiUrl: string) {
+        let success : boolean;
         let url = EnvConfig.host + apiUrl;
 
         let header = {};
@@ -30,11 +31,14 @@ export default class HttpUtils {
             if (response.status == 401) {
                 window.location.href = window.location.origin + "/login";
             }
-            if (response.ok == false)
-                throw new Error("Error!");
-            else return response.json();
+            success = response.ok;
+            return response.json();
         })
-            .then(data => { return data })
+            .then(data => { 
+                if(success == false)
+                    throw new Error(data.Message)
+                return data 
+             })
             .catch(error => {
                 throw new Error(error.message);
             });
@@ -43,6 +47,7 @@ export default class HttpUtils {
     }
 
     static async post<T>(apiUrl: string, requestData: object) {
+        let success : boolean;
         let url = EnvConfig.host + apiUrl;
 
         let header = {};
@@ -71,13 +76,15 @@ export default class HttpUtils {
             if (response.status == 401) {
                 window.location.href = window.location.origin + "/login";
             }
-            if (response.ok == false)
-                throw new Error("Error!");
-            else {
-                return response.json();
-            };
+
+            success = response.ok;
+            return response.json();
         })
-            .then(data => { return data })
+            .then(data => { 
+                if(success == false)
+                    throw new Error(data.Message)
+                return data 
+            })
             .catch(error => {
                 throw new Error(error.message);
             });

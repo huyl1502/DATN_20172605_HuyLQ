@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {}
+    "C:\\Users\\Nguyen Hien\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {
+    "C:\\Users\\Nguyen Hien\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj",
+        "projectUniqueName": "C:\\Users\\Nguyen Hien\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\obj\\",
+        "projectPath": "C:\\Users\\Nguyen Hien\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\Nguyen Hien\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nguyen Hien\\source\\repos\\DATN_20172605_HuyLQ\\ConsoleApp\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nguyen Hien\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://118.70.81.222:8089/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
         }
       }
     }
